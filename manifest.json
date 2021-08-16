@@ -1,7 +1,7 @@
 {
-  "short_name": "Coast Research Technology",
-  "name": "Coast Research Technology",
-  "description": "Bringing Ideas to reality",
+  "short_name": "Boost Token LLC",
+  "name": "Boost Token LLC",
+  "description": "Boost Token LLC",
   "lang": "en",
   "icons": [
     {
@@ -12,12 +12,12 @@
   ],
   "start_url": "./?v3&utm_source=web_app_manifest",
   "background_color": "#ffffff",
-  "theme_color": "#0E0325",
-  "color": "#0E0325",
+  "theme_color": "#2e7eed",
+  "color": "#000",
   "display": "minimal-ui",
   "orientation": "portrait",
   "related_applications": [{
     "platform": "web",
-    "url": "https://coastresearchtechnology.com"
+    "url": "https://boosttoken.netlify.app"
   }]
 }

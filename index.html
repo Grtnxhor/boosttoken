@@ -21,10 +21,13 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <meta name="theme-color" content="#0E0325">
+  <meta name="theme-color" content="#2e7eed">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+  <!-- Manifest-->
+  <link rel="manifest" href="manifest.json">
   
   <!-- PLUGINS CSS STYLE -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -478,6 +481,31 @@
   <script src="plugins/google-map/gmap.js"></script>
   
   <script src="js/script.js"></script>
+  <script>
+	if ('serviceWorker' in navigator) {
+		console.log("Will the service worker register?");
+		navigator.serviceWorker.register('service-worker.js')
+			.then(function(reg) {
+				console.log("Yes, it did.");
+			}).catch(function(err) {
+				console.log("No it didn't. This happened: ", err)
+			});
+	}
+	</script>
+	<script src="service-worker.js">
+	// Service worker for Progressive Web App
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker.js', {
+			scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
+		}).then(function(registration) {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}, function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		});
+	}
+	</script>
 </body>
 
 </html>
